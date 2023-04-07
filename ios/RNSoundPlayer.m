@@ -96,6 +96,7 @@ RCT_EXPORT_METHOD(setMixAudio:(BOOL) on) {
     
     if (on) {
         [session setCategory: AVAudioSessionCategoryPlayback withOptions:AVAudioSessionCategoryOptionMixWithOthers error:nil];
+        [session setActive:false withOptions:AVAudioSessionSetActiveOptionNotifyOthersOnDeactivation error:nil];
     } else {
         [session setCategory: AVAudioSessionCategoryPlayback withOptions:0 error:nil];
     }
